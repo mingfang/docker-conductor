@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#sv start socklog-unix || exit 1
+
+source /etc/envvars
+export WF_SERVER=http://localhost:8080/api/
+
+cd /app/ui/dist
+
+exec 2>&1
+exec node server.js
